@@ -1,0 +1,365 @@
+:root {
+    --primary-color: #2c3e50;
+    --primary-color-rgb: 44, 62, 80;
+    --primary-dark: #1a252f;
+    --primary-light: #34495e;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --bg-dark: #1a1a1a;
+    --bg-light: #f8f9fa;
+}
+
+/* Override Bootstrap primary color */
+:root {
+    --bs-primary: var(--primary-color);
+    --bs-primary-rgb: var(--primary-color-rgb);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.hover-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(var(--primary-color-rgb), 0.3) !important;
+}
+
+.card-img-top img {
+    transition: transform 0.3s ease;
+}
+
+.hover-shadow:hover .card-img-top img {
+    transform: scale(1.05);
+}
+
+.btn-link {
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--bs-primary) !important;
+    opacity: 0.8;
+}
+
+/* Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-scrolled {
+    background-color: rgba(var(--primary-color-rgb), 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    color: var(--text-light) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.offcanvas {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+
+.offcanvas .btn-close {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+.offcanvas .btn-close:focus {
+    box-shadow: none;
+}
+
+/* Home Page Styles */
+.social-link {
+    transition: color 0.3s ease;
+    color: var(--text-light) !important;
+}
+
+.social-link:hover {
+    color: var(--accent-color) !important;
+}
+
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 2.5rem !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Section Title Styles */
+.section-title {
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+/* Skill Card Styles */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card .text-primary {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color) !important;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    letter-spacing: 0.5px;
+}
+
+.skill-card .progress {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-card .progress-bar {
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    transition: width 1s ease-in-out;
+}
+
+/* Certificate Card Styles */
+.certificate-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10), 0 1.5px 6px rgba(44, 62, 80, 0.08);
+    border: none;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(.4, 2, .3, 1), box-shadow 0.25s cubic-bezier(.4, 2, .3, 1);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(231, 76, 60, 0.18), 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.certificate-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 2px solid #f2f2f2;
+    background: #f8f9fa;
+}
+
+.certificate-card .card-body {
+    flex: 1 1 auto;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.certificate-card .card-title {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2px;
+    transition: color 0.3s;
+}
+
+.certificate-card .card-text {
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.certificate-card .card-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.certificate-card .btn-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0 0 0;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.certificate-card .btn-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.certificate-card .btn-link svg {
+    transition: transform 0.2s;
+}
+
+.certificate-card .btn-link:hover svg {
+    transform: translateX(2px);
+}
+
+/* Glass Effect for Cards */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+/* Hover Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hover-float:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Contact Page Styles */
+.form-control {
+    background-color: rgba(var(--primary-color-rgb), 0.1) !important;
+    border-color: rgba(var(--primary-color-rgb), 0.2) !important;
+    color: var(--text-light) !important;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.alert {
+    border: none;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #198754;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+/* Social Links */
+.social-link {
+    color: var(--text-light) !important;
+}
+
+.social-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.2);
+}
+
+.card:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--accent-color) !important;
+}
+
+.text-secondary {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Hover Effects */
+.hover-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-outline-primary {
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--accent-color) !important;
+    color: var(--text-light) !important;
+}
