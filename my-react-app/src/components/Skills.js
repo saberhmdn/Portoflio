@@ -64,7 +64,7 @@ const SkillName = styled.h3`
 const skills = [
     { name: 'React', icon: <FaReact /> },
     { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'TypeScript', icon: <SiTypescript /> },
+    { name: 'C++', icon: <SiTypescript /> },
     { name: 'HTML5', icon: <FaHtml5 /> },
     { name: 'CSS3', icon: <FaCss3Alt /> },
     { name: 'JavaScript', icon: <FaJs /> },
